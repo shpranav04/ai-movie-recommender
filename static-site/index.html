@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ReelPulse — Movie Recommender</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <div class="glow glow-one"></div>
+  <div class="glow glow-two"></div>
+  <div class="grid-overlay"></div>
+  <div class="bg-noise"></div>
+  <main class="page">
+    <header class="topbar">
+      <div class="logo">ReelPulse</div>
+      <div class="topbar-actions">
+        <span class="pill">Curated from 9k+ films</span>
+        <span class="pill muted"></span>
+      </div>
+    </header>
+
+    <section class="layout">
+      <div class="hero">
+        <div class="badge">By Pranav Sharma</div>
+        <h1>Find your next movie in one smooth move.</h1>
+        <p>
+          ReelPulse studies a film's genre DNA and blends in its closest neighbors.
+          Start typing, hit enter, and watch the lineup ripple into view.
+        </p>
+        <div class="stats">
+          <div class="stat">
+            <span class="stat-value">9k+</span>
+            <span class="stat-label">Movies indexed</span>
+          </div>
+          <div class="stat">
+            <span class="stat-value">20+</span>
+            <span class="stat-label">Genres mapped</span>
+          </div>
+          <div class="stat">
+            <span class="stat-value">10</span>
+            <span class="stat-label">Matches per search</span>
+          </div>
+        </div>
+        <div class="tips">
+          <span class="tip">Try a title you love to get matching vibes.</span>
+          <span class="tip">Use full titles with year for best results.</span>
+        </div>
+      </div>
+
+      <section class="card">
+        <form id="reco-form" autocomplete="off">
+          <label for="movie" class="label">Movie title</label>
+          <div class="input-row">
+            <input id="movie" name="movie" list="titles" placeholder="Try: Toy Story (1995)" required />
+            <button type="submit">Recommend</button>
+          </div>
+          <datalist id="titles"></datalist>
+        </form>
+        <div id="status" class="status" role="status" aria-live="polite"></div>
+        <div class="results-header">
+          <h2>Recommended for you</h2>
+          <span class="pill muted">Staggered reveal</span>
+        </div>
+        <ul id="results" class="results" aria-live="polite"></ul>
+      </section>
+    </section>
+  </main>
+
+  <script src="movies.js"></script>
+  <script src="app.js"></script>
+</body>
+
+</html>
